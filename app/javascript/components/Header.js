@@ -57,26 +57,37 @@ const Header = (props) => {
 
   return (
     <header>
-      <h1>Where's Waldo</h1>
-      <div className="character-container">
-        <img src={waldoImg} />
-        {displaySvg(waldo)}
-        
+      <div className="title-container">
+        <h1>Where's Waldo?</h1>
       </div>
-      <div className="character-container">
-        <img src={wizardImg} />  
-        {displaySvg(wizard)}
+
+      <div className="characters-container">
+        <div className="character-container">
+          <img id="waldo" src={waldoImg} />
+          {displaySvg(waldo)}
+          
+        </div>
+        <div className="character-container">
+          <img src={wizardImg} />  
+          {displaySvg(wizard)}
+        </div>
+        <div className="character-container">
+          <img src={odlawImg} /> 
+          {displaySvg(odlaw)} 
+        </div>
       </div>
-      <div className="character-container">
-        <img src={odlawImg} /> 
-        {displaySvg(odlaw)} 
+
+      <div className="timer-container">
+        <h1>0:02</h1>
       </div>
-      {showInstructions()}
-      {showTimer()}
-      <button onClick={() => setGameOn(false)}>Stop Game</button>
+      
       
     </header>
   )
 }
 
 export default Header
+
+// {showInstructions()}
+//       {showTimer()}
+//       <button onClick={() => setGameOn(false)}>Stop Game</button>

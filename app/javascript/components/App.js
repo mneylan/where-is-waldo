@@ -73,11 +73,13 @@ const App = () => {
     <div>
       <Header gameOn={gameOn}setGameOn={setGameOn}waldo={waldoFound} wizard={wizardFound} odlaw={odlawFound}/>
       <Board gameOn={gameOn} dropDownStatus={dropDown} selectCharacter={selectCharacter} adjustedX={adjustedX} adjustedY={adjustedY} xStyle={xStyle} yStyle={yStyle} setWaldoFound={setWaldoFound} setWizardFound={setWizardFound} setOdlawFound={setOdlawFound}/>
-      {allFound()}
-      <HighScore />
-      <p>Running in {process.env.NODE_ENV}</p>  
+      {allFound()} 
+      
+       
     </div>
   )
 }
 
 export default App
+
+{/* <p>Running in {process.env.NODE_ENV}</p>  */}

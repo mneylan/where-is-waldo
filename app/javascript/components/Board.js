@@ -1,5 +1,6 @@
 import React from "react"
-
+import HighScore from "./HighScore"
+import Instructions from "./Instructions"
 
 
 const Board = (props) => {
@@ -76,8 +77,12 @@ const Board = (props) => {
     <div className="waldo-flex-container">
       <div className="waldo-board" onClick={selectCharacter}>
         {makeDropDown()}
+        <HighScore />
       </div>
+      {/* <Instructions /> */}
+      
     </div>
+    
   )
 }
 
@@ -91,4 +96,5 @@ export default Board
 //     console.log(results[0])
 //   })
 // }
+
 

@@ -1,6 +1,6 @@
 import React from "react"
 import { useRef, useState } from "react"
-
+import uniqid from 'uniqid'
 
 const HighScore = () => {
   const nameRef = useRef()
@@ -43,31 +43,77 @@ const HighScore = () => {
 
   return (
     <div className="score-container">
-      {highScores.map(player => {
-        return (
-          <div className="score-row">
-            <h2 className="player">{player.name}</h2>
-            <h2 className="score">{player.time}</h2>
-          </div>
-        )
-      })}
+      <div className="score-title-container">
+        <h1>High Scores</h1>
+      </div>
 
-      <form>
-        <label>
-          Name:
-          <input ref={nameRef} type="text" name="name" min="2" max="22" required></input>
+      <div className="score-grid-container">
+        <div className="score-grid-item">
+          <h2>James</h2>
+        </div>
+        <div className="score-grid-item">
+          <h2>00:01:21</h2>
+        </div>
+        <div className="score-grid-item">
+          <h2>Robert</h2>
+        </div>
+        <div className="score-grid-item">
+          <h2>00:01:21</h2>
+        </div>
+        <div className="score-grid-item">
+          <h2>James</h2>
+        </div>
+        <div className="score-grid-item">
+          <h2>00:01:21</h2>
+        </div>
+        <div className="score-grid-item">
+          <h2>Robert</h2>
+        </div>
+        <div className="score-grid-item">
+          <h2>00:01:21</h2>
+        </div>
+      </div>
 
-        </label>
-        <label>
-          Time:
-          <input ref={timeRef} type="text" name="time" required></input>
-
-        </label>
-        <button type="button" onClick={postApi}>Submit</button>
-        <button type="button" onClick={getHighScores}>High Scores</button>
-      </form>
+      <div className="enter-name-container">
+        <div className="enter-flex-item1">
+          <h2 className="name">Name</h2>
+          <input type="text" name="name"></input>
+        </div>
+        <div className="enter-flex-item2">
+          <button type="button" className="score-btn">SUBMIT</button>
+          <button type="button" className="score-btn">RESTART</button>
+        </div>
+      </div>
+      
     </div>
   )
 }
 
 export default HighScore
+
+// {highScores.map(player => {
+//   return (
+//     <div className="score-row" key={uniqid()}>
+//       <h2 className="player">{player.name}</h2>
+//       <h2 className="score">{player.time}</h2>
+//     </div>
+//   )
+// })}
+
+{/* <button type="button" onClick={postApi}>Submit</button>
+        <button type="button" onClick={getHighScores}>High Scores</button> */}
+
+
+{/* <form>
+  <label>
+    Name:
+    <input ref={nameRef} type="text" name="name" min="2" max="22" required></input>
+
+  </label>
+  <label>
+    Time:
+    <input ref={timeRef} type="text" name="time" required></input>
+
+  </label>
+        
+</form> */}

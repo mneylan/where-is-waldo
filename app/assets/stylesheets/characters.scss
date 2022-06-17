@@ -1,3 +1,309 @@
 // Place all the styles related to the Characters controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+
+$header-border: #60AAE9;
+$body-blue: rgba(96, 170, 233, 0.25);
+
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  box-sizing: border-box;
+}
+
+strong {
+  font-weight: bold;
+}
+
+body {
+  position: relative;
+  background-color: $body-blue;
+}
+
+h1 {
+  font-family: 'Trebuchet MS', Arial, sans-serif;
+  font-weight: 500;
+  font-size: 2.5rem;
+  color: black;
+}
+
+.waldo-flex-container {
+  margin-top: 114px;
+  padding: 30px 60px;
+  display: flex
+  
+  
+  
+}
+
+.waldo-board {
+  position: relative;
+  background-image: url('./where\'s_waldo.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  aspect-ratio: 16 / 9;
+  
+  flex-basis: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+
+header {
+  background: white;
+  position: fixed;
+  border: solid 12px $header-border;
+  top: 0;
+  width: 100%;
+  z-index: 5;
+  min-height: 90px;
+  display: flex;
+  letter-spacing: 1px;
+  align-items: center;
+  padding: 0 60px;
+ 
+  
+  gap: 30px;
+  
+}
+
+.title-container, .timer-container {
+  display: flex;
+  justify-content: center;
+  flex-basis: 33%;
+}
+
+.characters-container {
+  display: flex;
+  justify-content: space-around;
+  flex-basis: 33%;
+}
+
+
+
+.character-container {
+  height: 90px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  
+}
+
+img {
+  height: 100%;
+  /* opacity: 0.3; */
+  
+}
+
+#waldo {
+  height: 82%;
+}
+
+.instructions-container {
+  margin-top: 10px;
+  margin: 0 auto;
+  background-color: #FCA2B7;
+  min-height: 500px;
+  border-radius: 20px;
+  padding: 60px 20px;
+  width: 82%;
+  text-align: center;
+  box-shadow: 4px 2px 8px #8e8e8e;
+}
+
+.instructions-text {
+  font-family: Tahoma, sans-serif;
+  font-size: 30px;
+  font-weight: 300;
+  line-height: 2;
+  letter-spacing: 0.5px;
+}
+
+.instructions-text-hidden {
+  font-family: Tahoma, sans-serif;
+  font-size: 30px;
+  font-weight: 300;
+  line-height: 2;
+  visibility: hidden;
+}
+
+.start-btn {
+  margin-top: 30px;
+  padding: 10px 40px;
+  border-radius: 5px;
+  letter-spacing: 2px;
+  font-size: 1.2rem;
+  font-family: Tahoma, sans-serif;
+}
+
+.fa-solid {
+  color: rgb(61, 209, 51);
+  font-size: 20px;
+}
+
+svg {
+  color: green;
+  position: absolute;
+  top: 30%;
+  left: 30%;
+  
+  height: 50%;
+  width: 50%;
+  
+}
+
+ul {
+  width: 45px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  font-size: 0.9rem;
+   
+}
+
+ul > li {
+  background-color: antiquewhite;
+  
+  list-style: none;
+  padding: 15px 15px;
+  cursor: pointer;
+}
+
+ul > li:nth-child(2) {
+  line-height: 1.5;
+}
+
+ul > li:hover {
+  background-color: lightcoral;
+}
+
+.instructions-container {
+  text-align: center;
+  font-size: 1.2rem;
+}
+
+
+
+.start-btn:hover {
+  box-shadow: 4px 2px 8px #8e8e8e;
+  background-color: rgb(222, 222, 222);
+  cursor: pointer;
+}
+
+.score-container {
+  
+  flex-basis: 65%;
+  height: 70%;
+  border-radius: 30px;
+  background-color: rgba(0, 0, 0, 0.88);
+  padding: 30px 30px 0 30px;
+}
+
+// button {
+//   margin: 0 10px;
+// }
+
+.score-title-container, .score-title-container > h1 {
+  text-align: center;
+  color: #FF0088;
+  font-family: Cooper, serif;
+  letter-spacing: 0.3px;
+}
+
+.score-grid-container {
+  margin-top: 30px;
+  display: grid;
+  height: 65%;
+  border-bottom: solid 1px grey;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(8, 1fr);
+}
+
+.score-grid-item {
+  text-align: center;
+  font-family: 'Trebuchet MS', Arial, sans-serif;
+  
+  color: #FF0088;
+  letter-spacing: 0.6px;
+}
+
+.enter-name-container {
+  display: flex;
+  min-height: 80px;
+
+}
+
+.enter-flex-item1 {
+  display: flex;
+  flex-basis: 55%;
+  align-items: center;
+  justify-content: center;
+  
+}
+
+.enter-flex-item2 {
+  display: flex;
+  flex-basis: 45%;
+  align-items: center;
+  justify-content: space-around;
+  
+}
+
+.enter-flex-item1 > input {
+  width: 50%;
+  margin-left: 30px;
+  padding: 5px 20px;
+  border-radius: 20px;
+  background-color: rgba(0, 0, 0, 0.88);
+  border: solid 2px #FF0088;
+  color: #FF0088;
+  letter-spacing: 0.75px;
+  font-family: 'Trebuchet MS', Arial, sans-serif;
+  font-size: 1rem;
+  outline: none;
+}
+
+
+.name {
+  font-family: 'Trebuchet MS', Arial, sans-serif;
+  font-size: 24px;
+  color: #FF0088;
+  letter-spacing: 0.6px;
+
+}
+
+.score-btn {
+  padding: 10px 30px;
+  border-radius: 5px;
+  letter-spacing: 2px;
+  font-size: 1.2rem;
+  font-family: Tahoma, sans-serif;
+  background-color: rgba(0, 0, 0, 0.88);
+  color: #FF0088;
+  border: solid 2px #FF0088;
+  cursor: pointer;
+}
+
+.score-btn:hover {
+  // background-color: rgba(24, 24, 24, 0.88);
+  box-shadow: 0 0 1px 2px #b4b4b4;
+}
+
+.score-row {
+  display: flex;
+  justify-content: center;
+  gap: 10%;
+}
+
+
+
+@media (max-width: 975px) {
+  .waldo-flex-container {
+    padding: 0 10px;
+  }
+
+  
+}
