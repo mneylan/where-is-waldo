@@ -2,6 +2,8 @@ import React, { useEffect } from "react"
 import { useRef, useState } from "react"
 import uniqid from 'uniqid'
 import { getGameTime, displayTime } from "./Time"
+import { environment } from "./Environment.js"
+
 
 const HighScore = (props) => {
   const {highScores, playerTime, restartGame} = props
@@ -53,6 +55,8 @@ const HighScore = (props) => {
   }
 
   let postToApi = async () => {
+    const url = environment.url 
+
     if (nameRef.current.value.length < 2 || nameRef.current.value.length > 24) {
       errorRef.current.style.display = "block"
       nameRef.current.value = ""
@@ -68,7 +72,7 @@ const HighScore = (props) => {
     }
     // mode: 'cors'
     
-    let response = await fetch(`http://localhost:3000/players`, {
+    let response = await fetch(`${url}/players`, {
     method: 'POST',
     headers: {
       // 'Accept': 'application/json',

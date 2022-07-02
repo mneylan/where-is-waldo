@@ -1,10 +1,10 @@
 import React from "react"
 import Board from "./Board.js"
 import Header from "./Header.js"
-import HighScore from "./HighScore.js"
 import { useState, useEffect } from "react"
 import Instructions from "./Instructions.js"
-import { getGameTime, displayTime } from "./Time.js"
+import { environment } from "./Environment.js"
+
 
 const App = () => {
 
@@ -87,14 +87,18 @@ const App = () => {
 
 
   let callApi = async () => {
-    let response = await fetch("http://localhost:3000/characters")
+    const url = environment.url 
+
+    let response = await fetch(`${url}/characters`)
     let data = await response.json()
     
     return data
   }
 
   let getHighScores = async () => {
-    let response = await fetch('http://localhost:3000/players')
+    const url = environment.url 
+
+    let response = await fetch(`${url}/players`)
     let data = await response.json()
 
     setHighScores(data)

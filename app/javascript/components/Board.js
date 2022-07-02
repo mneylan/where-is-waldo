@@ -1,13 +1,16 @@
 import React from "react"
 import HighScore from "./HighScore"
-import Instructions from "./Instructions"
+import { environment } from "./Environment.js"
+
 
 
 const Board = (props) => {
   const {gameOn, dropDownStatus, highScores, selectCharacter, adjustedX, adjustedY, xStyle, yStyle, setWaldoFound, setWizardFound, setOdlawFound, gameOver, playerTime, restartGame } = props
   
   let callApi = async () => {
-    let response = await fetch("http://localhost:3000/characters")
+    const url = environment.url 
+    
+    let response = await fetch(`${url}/characters`)
     let data = await response.json()
     
     
