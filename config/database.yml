@@ -82,6 +82,7 @@ test:
 #
 production:
   <<: *default
-  database: where_is_waldo_production
-  username: where_is_waldo
-  password: <%= ENV['WHERE_IS_WALDO_DATABASE_PASSWORD'] %>
+  url: <%= ENV['DATABASE_URL'] %>
+  # database: where_is_waldo_production
+  # username: where_is_waldo
+  # password: <%= ENV['WHERE_IS_WALDO_DATABASE_PASSWORD'] %>
