@@ -3,7 +3,7 @@ const development = {
 }
 
 const production = {
-  url: "https://waldo-is-where.herokuapp.com/"
+  url: "https://waldo-is-where.onrender.com"
 }
 
 export const environment = process.env.NODE_ENV === 'development' ? development : production;
