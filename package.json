@@ -1,6 +1,9 @@
 {
   "name": "where-is-waldo",
   "private": true,
+  "engines": {
+    "node": "14.x"
+  },
   "dependencies": {
     "@babel/preset-react": "^7.16.7",
     "@rails/actioncable": "^6.0.0",
