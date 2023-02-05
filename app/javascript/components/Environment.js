@@ -3,7 +3,7 @@ const development = {
 }
 
 const production = {
-  url: "where-is-waldo-production.up.railway.app"
+  url: "https://where-is-waldo-production.up.railway.app"
 }
 
 export const environment = process.env.NODE_ENV === 'development' ? development : production;
